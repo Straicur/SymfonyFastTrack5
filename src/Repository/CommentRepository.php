@@ -25,7 +25,7 @@ class CommentRepository extends ServiceEntityRepository
         parent::__construct($registry, Comment::class);
     }
 
-    public function add(Comment $entity, bool $flush = false): void
+    public function add(Comment $entity, bool $flush = true): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -34,7 +34,7 @@ class CommentRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Comment $entity, bool $flush = false): void
+    public function remove(Comment $entity, bool $flush = true): void
     {
         $this->getEntityManager()->remove($entity);
 
